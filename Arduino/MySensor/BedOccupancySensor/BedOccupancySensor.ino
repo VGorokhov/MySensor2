@@ -1,30 +1,22 @@
 /**
- * The MySensors Arduino library handles the wireless radio link and protocol
- * between your home built sensors/actuators and HA controller of choice.
- * The sensors forms a self healing radio network with optional repeaters. Each
- * repeater and gateway builds a routing tables in EEPROM which keeps track of the
- * network topology allowing messages to be routed to nodes.
- *
- * Created by Henrik Ekblad <henrik.ekblad@mysensors.org>
- * Copyright (C) 2013-2015 Sensnology AB
- * Full contributor list: https://github.com/mysensors/Arduino/graphs/contributors
- *
- * Documentation: http://www.mysensors.org
- * Support Forum: http://forum.mysensors.org
- *
- * This program is free software; you can redistribute it and/or
- * modify it under the terms of the GNU General Public License
- * version 2 as published by the Free Software Foundation.
- *
- *******************************
- *
- * DESCRIPTION
- *
- * Simple binary switch example 
- * Connect button or door/window reed switch between 
- * digitial I/O pin 3 (BUTTON_PIN below) and GND.
- * http://www.mysensors.org/build/binary
- */
+   Бибилиотеки для прошивки - MySensors.
+   Copyright (C) 2013-2018 Sensnology AB
+   Full contributor list: https://github.com/mysensors/MySensors
+
+  *******************************
+
+   Версия прошивки
+   Version 1.0 - VGorokhov
+
+   Документация по прошивке
+   "Датчик кровати"   
+   
+   http://majordomo.smartliving.ru/forum/viewforum.php?f=20
+
+   Исходный файл:
+   https://github.com/VGorokhov/MySensor2/tree/master/Arduino/MySensor/BedOccupancySensor
+
+*/
 
 
 // Enable debug prints to serial monitor
@@ -40,10 +32,7 @@
 #include <MPR121.h>
 #include <Wire.h>
 
-#define SN "Bed Occupancy"
-#define SV "2.0"
-
-#define NODE_ID 34
+#define NODE_ID 16
 
 #define CHILD_ID_BED_RIGHT 0
 #define CHILD_ID_BED_LEFT 1
@@ -93,7 +82,6 @@ MyMessage msgLeftOcc(CHILD_ID_BED_LEFT, V_TRIPPED);
 void setup()  
 {  
 // begin(NULL, NODE_ID);
-  sendSketchInfo(SN, SV);
 
   // 0x5A is the default MPR121 I2C address
   if (!MPR121.begin(0x5A)) {
@@ -141,6 +129,8 @@ void setup()
 }
 
 void presentation() {
+
+   sendSketchInfo("Bed Occupancy", "1.0");
   // Register binary input sensor to gw (they will be created as child devices)
   // You can use S_DOOR, S_MOTION or S_LIGHT here depending on your usage. 
   // If S_LIGHT is used, remember to update variable type you send in. See "msg" above.

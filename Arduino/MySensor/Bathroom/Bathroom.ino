@@ -1,3 +1,27 @@
+/**
+   Бибилиотеки для прошивки - MySensors.
+   Copyright (C) 2013-2018 Sensnology AB
+   Full contributor list: https://github.com/mysensors/MySensors
+
+  *******************************
+
+   Версия прошивки
+   Version 1.0 - VGorokhov
+
+   Документация по прошивке
+   "Датчик в ванной комнате":
+   Температура
+   Влажность
+   Датчик движения
+   Датчик двери
+   
+   http://majordomo.smartliving.ru/forum/viewforum.php?f=20
+
+   Исходный файл 
+   https://github.com/VGorokhov/MySensor2/tree/master/Arduino/MySensor/Bathroom
+
+*/
+
 // Enable debug prints
 // #define MY_DEBUG
 
@@ -180,4 +204,5 @@ void loop()
 	// Sleep until interrupt comes in on motion sensor. Send update every two minute.
 	sleep(digitalPinToInterrupt(PIR_DIGITAL_INPUT_SENSOR_PIN), CHANGE, SLEEP_TIME);
 }
+
 
