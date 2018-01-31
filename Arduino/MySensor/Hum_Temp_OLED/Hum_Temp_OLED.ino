@@ -1,10 +1,18 @@
 /**
+   Бибилиотеки для прошивки - MySensors.
+   Copyright (C) 2013-2018 Sensnology AB
+   Full contributor list: https://github.com/mysensors/MySensors
+   
  *******************************
- *
- * REVISION HISTORY
- * Version 2.0 - VGorokhov
- * 
- * DESCRIPTION
+   Версия прошивки
+   Version 1.0 - VGorokhov
+
+   Документация по прошивке
+   "Датчик температуры и влажности с дисплеем":
+    Температура
+    Влажность
+    Напряжение батерии питания
+    Дисплей OLED
  * ****************************
  *       OLED         ARDUINO
  *  -----1234-----
@@ -15,6 +23,12 @@
  *  --------------
  *  
  *  OLED ASCII Library from https://github.com/greiman/SSD1306Ascii
+   
+   http://majordomo.smartliving.ru/forum/viewforum.php?f=20
+
+   Исходный файл 
+   https://github.com/VGorokhov/MySensor2/tree/master/Arduino/MySensor/Hum_Temp_OLED
+ *  
  *  
  */
  
